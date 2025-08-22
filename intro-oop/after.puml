@@ -1,0 +1,26 @@
+@startuml
+hide empty members
+
+interface ITrackPlayer {
+    +void PlayTrack(string trackId)
+}
+
+interface IPlaylistCreator {
+    +void CreatePlaylist(string playlistName)
+}
+
+class BasicMusicPlayer {
+   
+}
+
+class AdvancedMusicPlayer {
+   
+}
+
+BasicMusicPlayer ..up|> ITrackPlayer
+AdvancedMusicPlayer ..up|> ITrackPlayer
+AdvancedMusicPlayer ..up|> IPlaylistCreator
+
+
+
+@enduml

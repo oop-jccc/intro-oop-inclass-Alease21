@@ -1,0 +1,21 @@
+@startuml
+hide empty members
+interface IMusicApp {
+    +void PlayTrack(string trackId)
+    +void CreatePlaylist(string playlistName)
+}
+
+class BasicMusicPlayer {
+   
+}
+
+class AdvancedMusicPlayer {
+   
+}
+
+BasicMusicPlayer ..up|> IMusicApp
+AdvancedMusicPlayer ..up|> IMusicApp
+
+note bottom of BasicMusicPlayer : BasicMusicPlayer does not support creating playlists
+
+@enduml
