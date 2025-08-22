@@ -1,0 +1,50 @@
+﻿@startuml
+' Styling to make the diagram more readable
+skinparam classAttributeIconSize 0
+
+' Define the classes and interfaces with their members
+
+interface INameable {
+  +GetName() : string
+}
+
+class Location {
+  +X : double
+  +Y : double
+  +Location(x: double, y: double)
+}
+
+abstract class Shape {
+  + {abstract} Area() : double
+  + Location : Location?
+  + GetName() : string
+}
+
+class Circle {
+  - _radius : double
+  + Circle(radius : double)
+  + Area() : double
+}
+
+class Triangle {
+  - _base : double
+  - _height : double
+  + Triangle(base : double, height : double)
+  + Area() : double
+}
+
+' Highlight the new Square class in green
+class Square #lightgreen {
+  - _sideLength : double
+  + Square(sideLength : double)
+  + Area() : double
+}
+
+' Define the relationships
+INameable <|.. Shape
+Shape <|-- Circle
+Shape <|-- Triangle
+Shape <|-- Square
+Shape o-- Location
+
+@enduml
