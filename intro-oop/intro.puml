@@ -1,0 +1,46 @@
+﻿@startuml
+title Intro to OOP Class Diagram
+hide empty members
+abstract class Shape {
+  {abstract} Area(): double
+  Location: Location
+  GetName(): string
+}
+
+interface INameable {
+  GetName(): string
+}
+
+class Circle {
+  _radius: double
+  Area(): double
+}
+
+class Triangle {
+  _base: double
+  _height: double
+  Area(): double
+}
+
+class Dog {
+  GetName(): string
+}
+
+class Location  {
+  X: double
+  Y: double
+}
+
+class Program {
+  Main(): void
+  PrintArea(shapes: Shape[]): void
+  PrintName(nameables: INameable[]): void
+}
+
+Shape <|-- Circle
+Shape <|-- Triangle
+INameable <|.. Shape
+INameable <|.. Dog
+Shape o-- Location
+
+@enduml

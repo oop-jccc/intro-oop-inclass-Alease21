@@ -1,0 +1,12 @@
+﻿| Question | Answer |
+| --- | --- |
+| 1. (Multiple Choice) Which class is an abstract class? <br> a) Circle <br> b) Shape <br> c) Triangle <br> d) Dog | b) Shape |
+| 2. (True/False) The `Location` class can be instantiated directly. | True |
+| 3. (Free Response) Explain why `Shape` is an abstract class and why it might be useful to make it abstract. | `Shape` is an abstract class because it represents a general concept of a shape, and we can't or don't want to create an instance of "Shape" directly. It's useful because it allows us to define methods that all shapes must have (like `Area`), but we can defer the implementation of these methods to the subclasses. |
+| 4. (Multiple Choice) Which class(es) implement the `INameable` interface? <br> a) Circle <br> b) Triangle <br> c) Shape <br> d) Dog <br> e) All of the above | e) All of the above |
+| 5. (True/False) The `Dog` class can calculate its area. | False |
+| 6. (Free Response) What is the purpose of the `INameable` interface in the given code? | The `INameable` interface allows objects of different classes to respond to the `GetName` method. This is useful when we want to process objects of different classes in a polymorphic manner. |
+| 7. (Multiple Choice) If a `Square` object is created with side length 2.0, what will be the output of the `Area` method? <br> a) 2.0 <br> b) 4.0 <br> c) 8.0 <br> d) 16.0 | b) 4.0 |
+| 8. (True/False) All `Shape` objects must have a `Location`. | False, `Location` is nullable in `Shape`, so a `Shape` may or may not have a `Location`. |
+| 9. (Free Response) How does the `Program` class use polymorphism? | The `Program` class uses polymorphism by treating `Circle`, `Triangle`, and `Square` objects as `Shape` objects and calling the `Area` method on them. It also treats `Circle`, `Triangle`, `Square`, and `Dog` objects as `INameable` objects and calls the `GetName` method on them. |
+| 10. (Multiple Choice) What will be the output of `GetName` method for a `Dog` object? <br> a) Dog <br> b) Samson <br> c) Shape <br> d) INameable | b) Samson |
