@@ -1,0 +1,22 @@
+@startuml
+
+hide empty members
+
+interface INotifier {
+    + void Notify(string userId)
+}
+
+class EmailNotifier {
+    + void Notify(string userId)
+}
+
+class SmsDecorator {
+    - INotifier _notifier
+    + void Notify(string userId)
+}
+
+SmsDecorator ..up|> INotifier
+SmsDecorator o-- INotifier
+EmailNotifier ..up|> INotifier
+
+@enduml
