@@ -1,0 +1,13 @@
+@startuml
+hide empty members
+class CoffeeMachine {
+  +BrewCoffee(): void
+}
+
+class EspressoMachine {
+  +MakeEspresso(): void
+  +SteamMilk(): void
+}
+
+EspressoMachine *-right---------- CoffeeMachine
+@enduml

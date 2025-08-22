@@ -1,0 +1,39 @@
+@startuml
+class Base {
+    #int x
+    # Foo()
+}
+
+note top of Base
+Composition leads to less tightly coupled dependency relationships.
+Favored for code reusability and maintainability.
+end note
+
+note right of Base::x
+    x is protected
+    diamond is the symbol for protected
+end note
+
+class Derived1 {
+    #int y
+    # Bar()
+}
+
+class Derived2 {
+    #int z
+    # Baz()
+}
+
+class Derived3 {
+    #int w
+    # Qux()
+}
+
+note right of Derived3    
+    Changes in Base, Derived1, or Derived2 do not force changes in Derived3
+end note
+
+Base "1" *-- "1" Derived1 : has-a
+Derived1 "1" *-- "1" Derived2 : has-a
+Derived2 "1" *-- "1" Derived3 : has-a
+@enduml
