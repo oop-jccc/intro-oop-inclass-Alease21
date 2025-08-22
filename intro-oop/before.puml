@@ -1,0 +1,24 @@
+@startuml
+hide empty members
+
+note as n1
+    The <b><color:red>Source Code Dependency</color> 
+    is in the <b>same</b> direction
+    of the <b><color:green>Flow of Control</color>
+end note
+class NotificationService {
+    - EmailNotifier _emailNotifier
+    + void NotifyUser(string userId)
+}
+
+class EmailNotifier {
+    + void SendEmail(string userId)
+}
+
+NotificationService -[#green,plain,thickness=3]right--> EmailNotifier : Flow of Control
+NotificationService -[#red,plain,thickness=3]right--> EmailNotifier : Source Code Dependency
+
+
+
+
+@enduml

@@ -1,0 +1,34 @@
+@startuml
+hide empty members
+
+note as n1
+    The <b><color:red>Source Code Dependency</color> 
+    is in the <b>opposite (inverted))</b> direction
+    of the <b><color:green>Flow of Control</color>
+end note
+
+class NotificationService {
+    - INotifier _notifier
+    + void NotifyUser(string userId)
+}
+
+interface INotifier {
+    + void Notify(string userId)
+}
+
+class EmailNotifier {
+    + void Notify(string userId)
+}
+NotificationService ..[#green,plain,thickness=3]right-> EmailNotifier : Flow of Control
+
+NotificationService -[hidden]right- INotifier : length =============
+NotificationService -[#red]-> INotifier : Source Code Dependency
+
+
+EmailNotifier -[hidden]right- INotifier : length ==============
+EmailNotifier ..[#red,plain,thickness=3]left|> INotifier : Source Code Dependency
+
+
+
+
+@enduml
