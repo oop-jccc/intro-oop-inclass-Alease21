@@ -1,0 +1,16 @@
+@startuml
+interface IEngine {
+    + void Run()
+}
+
+class SafetyCheckEngineDecorator {
+    - readonly IEngine _decoratedEngine
+    + SafetyCheckEngineDecorator(IEngine decoratedEngine)
+    + void Run()
+    - bool IsSafeToRun()
+}
+
+IEngine <|.. SafetyCheckEngineDecorator
+IEngine --* SafetyCheckEngineDecorator
+note right of SafetyCheckEngineDecorator : The decorator has a reference to the decorated interface and implements it
+@enduml
