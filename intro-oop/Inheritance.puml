@@ -1,0 +1,38 @@
+@startuml
+class Base {
+    #int x     
+    # Foo()   
+}
+
+note top of Base
+An Inheritance tree consisting of only concrete classes represents the most tightly coupled dependency relationship.
+Should be avoided if possible.
+end note
+
+note right of Base::x
+    x is protected
+    diamond is the symbol for protected
+end note
+Class Derived1 {
+    #int y
+    # Bar()
+}
+
+class Derived2 {
+    #int z
+    # Baz()
+}
+
+class Derived3 {
+    #int w
+    # Qux()
+}
+note right of Derived3
+   Derived3 knows about x, y, z and Foo, Bar, Baz
+   Any change to any of these might require a change to Derived3
+end note
+Base <|-- Derived1
+Derived1 <|-- Derived2
+Derived2 <|-- Derived3
+
+@enduml
