@@ -6,17 +6,20 @@ internal static class Program
     {
         var circle = new Circle(1.0);
         var triangle = new Triangle(1.0, 2.0);
+        var square = new Square(2.0f);
 
         var shapes = new List<Shape>
         {
             circle,
-            triangle
+            triangle,
+            square
         };
         var names = new List<INameable>
         {
             circle,
             triangle,
-            new Dog()
+            new Dog(),
+            square
         };
 
         PrintArea(shapes);
