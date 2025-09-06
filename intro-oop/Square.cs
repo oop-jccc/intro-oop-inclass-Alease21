@@ -2,14 +2,14 @@ namespace intro_oop;
 
 public class Square : Shape
 {
-    private float _sideLength;
+    private double _sideLength;
 
-    public Square(float sideLength)
+    public Square(double sideLength)
     {
         _sideLength = sideLength;
     }
 
-    public override float Area()
+    public override double Area()
     {
         return _sideLength * _sideLength;
     }
