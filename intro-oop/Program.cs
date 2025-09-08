@@ -18,8 +18,15 @@ public class Book
     }
 }
 
-public class EBook : Book
+public class EBook
 {
+    Book book = new Book();
+
+    public void Read()
+    {
+        book.Read();
+    }
+    
     public void Download()
     {
         Console.WriteLine("Downloading...");
