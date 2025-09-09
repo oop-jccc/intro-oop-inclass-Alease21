@@ -1,6 +1,6 @@
 namespace intro_oop;
 
-internal class Battery
+internal class Battery : IBattery
 {
     public void ChargeUp()
     {
