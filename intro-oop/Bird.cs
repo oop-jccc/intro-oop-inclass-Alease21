@@ -3,9 +3,9 @@ namespace intro_oop;
 // Does this class violate the Single Responsibility Principle (SRP)?
 // Yes: It handles both flying behavior and egg-laying behavior, which are distinct responsibilities, giving it multiple reasons to change.
 // No: It simply represents the basic behaviors of a bird, hence it is following a single responsibility of showcasing a bird's general actions.
-public class Bird
+public class Bird : IFly
 {
-    public virtual void Fly()
+    public void Fly()
     {
         Console.WriteLine("This bird is flying.");
     }
