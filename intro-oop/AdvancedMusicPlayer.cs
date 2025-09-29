@@ -1,6 +1,6 @@
 namespace intro_oop;
 
-public class AdvancedMusicPlayer : IMusicApp
+public class AdvancedMusicPlayer : IPlayMusic, ICreatePlaylists
 {
     public void PlayTrack(string trackId)
     {
