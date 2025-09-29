@@ -4,7 +4,8 @@ internal static class Program
 {
     private static void Main()
     {
-        var notificationService = new NotificationService();
+        var emailNotifier = new EmailNotifier();
+        var notificationService = new NotificationService(emailNotifier);
         notificationService.NotifyUser("User123");
     }
 }

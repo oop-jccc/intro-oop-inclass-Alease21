@@ -2,10 +2,15 @@ namespace intro_oop;
 
 public class NotificationService
 {
-    private readonly EmailNotifier _emailNotifier = new();
+    private readonly INotifier _emailNotifier;
+
+    public NotificationService(INotifier emailNotifier)
+    {
+        _emailNotifier = emailNotifier;
+    }
 
     public void NotifyUser(string userId)
     {
-        _emailNotifier.SendEmail(userId);
+        _emailNotifier.Notify(userId);
     }
 }
